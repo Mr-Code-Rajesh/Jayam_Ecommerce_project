@@ -17,6 +17,6 @@ server.get("/", (req, res) => {
   res.json({ message: " JSON Server is running successfully on Vercel!" });
 });
 
-server.use("/api", router);
+server.use("/api", router); 
 
 export default server;

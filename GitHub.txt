@@ -1,0 +1,13 @@
+Front end : 
+git clone https://github.com/Mr-Code-Rajesh/Jayam_Ecommerce_project.git
+cd ecommerce
+App start command : npm run dev
+
+
+Back End : 
+cd api-server
+server start Command : npm start 
+
+
+
+

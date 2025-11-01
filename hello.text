@@ -1,0 +1,6 @@
+git remote add origin https://github.com/Mr-Code-Rajesh/Jayam_Ecommerce_project.git
+git branch -M main
+git push -u origin main
+
+
+

@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
   const navigate = useNavigate();
+  const API = import.meta.env.VITE_API_URL;
  
   const [addresses, setAddresses] = useState([]);
   const [selected, setSelected] = useState(null);
@@ -32,7 +33,7 @@ export default function Cart() {
     try {
       setLoadingAddress(true);
       const res = await axios.get(
-        `http://localhost:3000/addresses?userId=${user.uid}`
+        `${API}/addresses?userId=${user.uid}`
       );
       setAddresses(res.data);
       if (res.data.length > 0) setSelected(res.data[0]);

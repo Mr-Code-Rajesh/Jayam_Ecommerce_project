@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 
 export default function AddAddressForm({ onSuccess }) {
   const { user } = useStore();
+  const API = import.meta.env.VITE_API_URL;
   const [form, setForm] = useState({
     name: "",
     mobile: "",
@@ -26,7 +27,7 @@ export default function AddAddressForm({ onSuccess }) {
     if (!user) return alert("Please login first.");
 
     try {
-      await axios.post("http://localhost:3000/addresses", {
+      await axios.post(`${API}/addresses`, {
         ...form,
         userId: user.uid
       });

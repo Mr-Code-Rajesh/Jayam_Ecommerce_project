@@ -5,14 +5,16 @@ import useStore from "../../Store/useStore";
 export default function AddressList() {
   const { user } = useStore();
   const [addresses, setAddresses] = useState([]);
+  const API = import.meta.env.VITE_API_URL;
 
 
   // Fetch Addresses
   const fetchAddresses = async () => {
     if (!user) return;
-    const res = await axios.get(`http://localhost:3000/addresses?userId=${user.uid}`);
+    const res = await axios.get(`${API}/addresses?userId=${user.uid}`);
     setAddresses(res.data);
   };
+
 
   useEffect(() => {
     fetchAddresses();
